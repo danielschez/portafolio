@@ -2,24 +2,45 @@
 import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCE = [
   {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
+    date: "Actualmente",
+    title: "Desarrollador Full Stack",
+    company: "Cerrajes",
     description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+      "Trabajo en el desarrollo y mantenimiento de sistemas web y móviles que ayudan a equipos internos y clientes a trabajar mejor. Me encargo de mejorar tiempos de carga, crear interfaces fáciles de usar y automatizar tareas repetitivas para que todo funcione más fluido. También colaboro con personas de distintas áreas para asegurar que lo que hacemos realmente resuelva problemas.",
+  },
+  {
+    date: "Abril 2024",
+    title: "Ingeniero en Software y Desarrollador Web",
+    company: "Freelance",
+    description:
+      "Ayudo a pequeñas empresas y proyectos personales a construir su presencia digital desde cero. Desde la idea hasta el lanzamiento, me involucro en cada etapa: diseño, desarrollo y publicación. Mi objetivo es crear soluciones a medida, bien pensadas y fáciles de mantener, que ayuden a las personas a enfocarse en lo que realmente importa.",
   },
   {
     date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
+    title: "Ingeniero Linux",
+    company: "Indra",
     description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+      "Formé parte de un equipo que gestionaba sistemas Linux críticos. Me encargaba de automatizar tareas, mantener los servidores funcionando sin interrupciones y garantizar que todo estuviera seguro y actualizado. Aunque el trabajo era muy técnico, lo más importante era que los sistemas estuvieran siempre disponibles para quienes los usaban.",
   },
+  {
+    date: "Marzo 2021",
+    title: "Desarrollador Web",
+    company: "Hamster Connect",
+    description:
+      "Participé en la creación de una red social pensada para emprendedores. Trabajé tanto en el desarrollo del frontend como del backend, creando funciones como perfiles, publicaciones y notificaciones. El objetivo era conectar a personas con ideas para que pudieran colaborar más fácilmente.",
+  },
+  {
+    date: "Agosto 2017",
+    title: "Desarrollador Web",
+    company: "Universidad Anáhuac Querétaro",
+    description:
+      "Colaboré en el desarrollo de varias herramientas digitales dentro del proyecto SmartCampus. Esto incluía sistemas para admisiones, reportes académicos y gestiones administrativas. Lo mejor de este trabajo fue ver cómo el software que hacíamos ayudaba directamente al personal y a los estudiantes en su día a día.",
+  }
 ]
+
 ---
 
-<ol class="relative mt-16">
+<ol class="relative mt-16 text-justify">
   {
     EXPERIENCE.map((experience) => (
       <li class="">
