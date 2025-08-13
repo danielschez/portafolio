@@ -3,11 +3,18 @@ import GitHub from "./icons/GitHub.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Python from "./icons/Python.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import PHP from "./icons/PHP.astro"
+import MySQL from "./icons/MySQL.astro"
+import Git from "./icons/Git.astro"
+import LINUX from "./icons/Linux.astro"
+import AWS from "./icons/aws.astro"
 
 type Tag = {
-  name: string;
-  class: string;
-  icon?: any;
+  name: string
+  class: string
+  icon?: any
 }
 
 const TAGS: Record<string, Tag> = {
@@ -18,30 +25,46 @@ const TAGS: Record<string, Tag> = {
   },
   GIT: {
     name: "Git",
-    class: "bg-orange-600 text-white",
+    class: "bg-gray-900 text-[#F1502F]",
+    icon: Git,
   },
   PHP: {
     name: "PHP",
-    class: "bg-purple-700 text-white",
+    class: "bg-[#777BB3] text-white",
+    icon: PHP,
   },
   MYSQL: {
     name: "MySQL",
-    class: "bg-[#4479A1] text-white",
+    class: "bg-white text-[#4479A1]",
+    icon: MySQL,
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-yellow-400 text-black",
+    class: "bg-[#F7DF1E] text-black",
+    icon: JavaScript,
   },
   PYTHON: {
     name: "Python",
-    class: "bg-[#3776AB] text-white",
+    class: "bg-[#e0f1fc] text-[#3776AB]",
+    icon: Python,
   },
+  LINUX: {
+    name: "Linux",
+    class: "bg-white text-black",
+    icon: LINUX,
+  },
+  AWS: {
+    name: "AWS",
+    class: "bg-[#f8f8f8] text-[#FF9900]",
+    icon: AWS,
+  },
+
 }
 
 const PROJECTS = [
   {
     title: "Universidad Anáhuac",
-    description: `Desarrollé y gestioné sistemas web robustos y escalables para la Universidad Anáhuac durante 5 años. Implementé soluciones en PHP, JavaScript y MySQL para digitalizar procesos académicos y administrativos, mejorando la experiencia de estudiantes y personal. Usé Git para mantener un flujo de trabajo ordenado y colaborativo, priorizando la eficiencia, estabilidad y facilidad de mantenimiento. Me enfoqué en construir interfaces accesibles y funcionales alineadas con los objetivos institucionales.`,
+    description: `Durante 5 años desarrollé y mantuve sistemas web que ayudaron a digitalizar procesos académicos y administrativos. Usé PHP, JavaScript y MySQL para crear herramientas más rápidas, seguras y fáciles de usar. También implementé flujos de trabajo con Git, asegurando que el desarrollo fuera ordenado y colaborativo. El resultado: estudiantes y personal con procesos más simples y eficientes.`,
     link: null,
     github: null,
     image: "/anahuac.png",
@@ -49,7 +72,7 @@ const PROJECTS = [
   },
   {
     title: "Hamster Connect",
-    description: `Colaboré con equipos internacionales en el desarrollo de la plataforma base de Hamster Connect, un sistema que proporciona una red financiera y social para inversionistas, brokers y aceleradoras. Diseñé e implementé la arquitectura del backend con PHP y MySQL, asegurando escalabilidad y solidez. También trabajé en el diseño de interfaces modernas y dinámicas usando HTML, CSS y JavaScript, con un enfoque en rendimiento, experiencia de usuario y objetivos de negocio. La plataforma integra oportunidades de inversión, noticias y colaboración en tiempo real.`,
+    description: `Trabajé con equipos internacionales para construir la base de una red social y financiera para inversionistas, brokers y aceleradoras. Diseñé el backend en PHP y MySQL priorizando escalabilidad y seguridad. En frontend, desarrollé interfaces rápidas y modernas con HTML, CSS y JavaScript, siempre pensando en la experiencia del usuario y el objetivo de negocio.`,
     link: null,
     github: null,
     image: "/hamster.png", // 265x74
@@ -57,67 +80,66 @@ const PROJECTS = [
   },
   {
     title: "Desarrollo Web Freelance",
-    description: `Ayudo a pequeñas empresas y proyectos personales a construir su presencia digital desde cero. Desde la idea hasta el lanzamiento, me involucro en cada etapa: diseño, desarrollo y publicación. He creado soluciones personalizadas con HTML, CSS, JavaScript, PHP y Python, combinando rendimiento, seguridad y usabilidad. También desarrollo scripts de automatización y herramientas backend que optimizan tareas internas y flujos de trabajo. Mi objetivo es entregar productos que sean fáciles de mantener y aporten verdadero valor a los usuarios.`,
+    description: `Ayudo a pequeñas empresas y emprendedores a tener presencia digital desde cero. Me encargo de todo: diseño, desarrollo y despliegue. He creado soluciones a medida con HTML, CSS, JavaScript, PHP y Python, cuidando rendimiento, seguridad y facilidad de mantenimiento. También desarrollo scripts y automatizaciones que ahorran tiempo y evitan tareas repetitivas.`,
     link: null,
     github: null,
     image: null,
     tags: [TAGS.JAVASCRIPT, TAGS.PHP, TAGS.GIT, TAGS.PYTHON],
   },
 ]
-
 ---
 
 <div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 group shadow-lg text-justify rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-        
-        {image && (
-          <div class="w-full md:w-1/2 flex items-center justify-center bg-white">
-            <div class="relative w-full h-56 md:h-full flex items-center justify-center">
-              <img
-                src={image}
-                alt={title}
-                class={`transition-transform duration-500 group-hover:scale-105 object-contain max-h-[120px] p-4`}
-                loading="lazy"
-              />
-            </div>
+  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article
+      class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 group shadow-lg text-justify rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700"
+    >
+      {image && (
+        <div class="w-full md:w-5/12 flex items-center justify-center p-2 bg-transparent dark:bg-transparent">
+          <div class="relative w-full h-56 md:h-full flex items-center justify-center">
+            <img
+              src={image}
+              alt={title}
+              class="transition-transform duration-500 group-hover:scale-105 object-contain max-h-[160px] max-w-[220px] w-auto"
+              loading="lazy"
+              style="image-rendering:auto;"
+            />
           </div>
-        )}
-        
-        <div class={`w-full ${image ? 'md:w-1/2' : 'md:w-full'} p-6 flex flex-col justify-between`}>
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">{title}</h3>
-            <ul class="flex flex-wrap gap-2 mt-2 mb-4">
-              {tags.map((tag, idx) => (
-                <li>
-                  <span
-                    class={`inline-flex items-center gap-1 rounded-full py-1 px-3 text-xs font-semibold ${tag.class}`}
-                  >
-                    {tag.icon && <tag.icon class="w-4 h-4" />}
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p class="text-gray-700 dark:text-gray-300 whitespace-pre-line">{description}</p>
-          </div>
-          <footer class="mt-6 flex gap-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHub class="w-5 h-5" />
-                Código
-              </LinkButton>
-            )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="w-5 h-5" />
-                Vista
-              </LinkButton>
-            )}
-          </footer>
         </div>
-      </article>
-    ))
-  }
+      )}
+
+      <div class={`w-full ${image ? "md:w-7/12" : "md:w-full"} p-6 flex flex-col justify-between`}>
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">{title}</h3>
+          <ul class="flex flex-wrap gap-2 mt-2 mb-4">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`inline-flex items-center gap-1 rounded-full py-1 px-3 text-xs font-semibold ${tag.class}`}
+                >
+                  {tag.icon && <tag.icon class="w-4 h-4" />}
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="text-gray-700 dark:text-gray-300 whitespace-pre-line">{description}</p>
+        </div>
+        <footer class="mt-6 flex gap-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="w-5 h-5" />
+              Código
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="w-5 h-5" />
+              Vista
+            </LinkButton>
+          )}
+        </footer>
+      </div>
+    </article>
+  ))}
 </div>
