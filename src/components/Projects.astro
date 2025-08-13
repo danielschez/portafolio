@@ -58,7 +58,6 @@ const TAGS: Record<string, Tag> = {
     class: "bg-[#f8f8f8] text-[#FF9900]",
     icon: AWS,
   },
-
 }
 
 const PROJECTS = [
@@ -67,7 +66,10 @@ const PROJECTS = [
     description: `Durante 5 años desarrollé y mantuve sistemas web que ayudaron a digitalizar procesos académicos y administrativos. Usé PHP, JavaScript y MySQL para crear herramientas más rápidas, seguras y fáciles de usar. También implementé flujos de trabajo con Git, asegurando que el desarrollo fuera ordenado y colaborativo. El resultado: estudiantes y personal con procesos más simples y eficientes.`,
     link: null,
     github: null,
-    image: "/anahuac.png",
+    image: {
+      light: "/anahuac-light.png",
+      dark: "/anahuac-dark.png",
+    },
     tags: [TAGS.PHP, TAGS.JAVASCRIPT, TAGS.MYSQL, TAGS.GIT],
   },
   {
@@ -75,7 +77,10 @@ const PROJECTS = [
     description: `Trabajé con equipos internacionales para construir la base de una red social y financiera para inversionistas, brokers y aceleradoras. Diseñé el backend en PHP y MySQL priorizando escalabilidad y seguridad. En frontend, desarrollé interfaces rápidas y modernas con HTML, CSS y JavaScript, siempre pensando en la experiencia del usuario y el objetivo de negocio.`,
     link: null,
     github: null,
-    image: "/hamster.png", // 265x74
+    image: {
+      light: "/hamster-light.png",
+      dark: "/hamster-dark.png",
+    },
     tags: [TAGS.PHP, TAGS.MYSQL, TAGS.GIT],
   },
   {
@@ -98,7 +103,10 @@ const PROJECTS = [
         <div class="w-full md:w-5/12 flex items-center justify-center p-2 bg-transparent dark:bg-transparent">
           <div class="relative w-full h-56 md:h-full flex items-center justify-center">
             <img
-              src={image}
+              id={`project-image-${title.replace(/\s+/g, "-").toLowerCase()}`}
+              data-light={image.light}
+              data-dark={image.dark}
+              src={image.light}
               alt={title}
               class="transition-transform duration-500 group-hover:scale-105 object-contain max-h-[160px] max-w-[220px] w-auto"
               loading="lazy"
@@ -143,3 +151,29 @@ const PROJECTS = [
     </article>
   ))}
 </div>
+
+<!-- Script para actualizar imágenes según tema -->
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const isDark = () =>
+      document.documentElement.classList.contains("dark");
+
+    const updateImages = () => {
+      document.querySelectorAll("img[data-light][data-dark]").forEach((el) => {
+        if (el instanceof HTMLImageElement) {
+          const light = el.getAttribute("data-light");
+          const dark = el.getAttribute("data-dark");
+          el.src = isDark() ? dark! : light!;
+        }
+      });
+    };
+
+    updateImages();
+
+    const observer = new MutationObserver(updateImages);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  });
+</script>
