@@ -1,21 +1,21 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import Python from "./icons/Python.astro"
-import JavaScript from "./icons/JavaScript.astro"
-import PHP from "./icons/PHP.astro"
-import MySQL from "./icons/MySQL.astro"
-import Git from "./icons/Git.astro"
-import LINUX from "./icons/Linux.astro"
-import AWS from "./icons/aws.astro"
+import GitHub from "./icons/GitHub.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Python from "./icons/Python.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import PHP from "./icons/PHP.astro";
+import MySQL from "./icons/MySQL.astro";
+import Git from "./icons/Git.astro";
+import LINUX from "./icons/Linux.astro";
+import AWS from "./icons/aws.astro";
 
 type Tag = {
-  name: string
-  class: string
-  icon?: any
-}
+  name: string;
+  class: string;
+  icon?: any;
+};
 
 const TAGS: Record<string, Tag> = {
   TAILWIND: {
@@ -58,7 +58,7 @@ const TAGS: Record<string, Tag> = {
     class: "bg-[#f8f8f8] text-[#FF9900]",
     icon: AWS,
   },
-}
+};
 
 const PROJECTS = [
   {
@@ -91,7 +91,7 @@ const PROJECTS = [
     image: null,
     tags: [TAGS.JAVASCRIPT, TAGS.PHP, TAGS.GIT, TAGS.PYTHON],
   },
-]
+];
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -155,8 +155,7 @@ const PROJECTS = [
 <!-- Script para actualizar imágenes según tema -->
 <script>
   document.addEventListener("astro:page-load", () => {
-    const isDark = () =>
-      document.documentElement.classList.contains("dark");
+    const isDark = () => document.documentElement.classList.contains("dark");
 
     const updateImages = () => {
       document.querySelectorAll("img[data-light][data-dark]").forEach((el) => {

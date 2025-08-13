@@ -1,19 +1,20 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
+
 const EXPERIENCE = [
   {
     date: "Abril 2024 – Actualidad",
     title: "Ingeniero en Software y Desarrollador Web",
     company: "Freelance",
     description:
-      "Trabajo con empresas y emprendedores para llevar sus ideas del papel a la web. Diseño y desarrollo soluciones a medida: desde landing pages rápidas hasta aplicaciones completas con panel de administración. Me encargo de todo el ciclo, usando tecnologías como React, Django, FastAPI, MySQL y Docker. Objetivo: que la tecnología trabaje por ellos, no al revés."
+      "Trabajo con empresas y emprendedores para llevar sus ideas del papel a la web. Diseño y desarrollo soluciones a medida: desde landing pages rápidas hasta aplicaciones completas con panel de administración. Me encargo de todo el ciclo, usando tecnologías como React, Next.js, Django, FastAPI, MySQL y Docker. Objetivo: que la tecnología trabaje por ellos, no al revés."
   },
   {
     date: "Abril 2025 – Agosto 2025",
     title: "Desarrollador Full Stack",
     company: "Cerrajes",
     description:
-      "Desarrollé y mantuve sistemas web y móviles para optimizar procesos internos y mejorar la experiencia de clientes. Mejoré tiempos de carga hasta un 40%, automatizando tareas repetitivas y creando interfaces intuitivas. Colaboré con área de logística y soporte para asegurar que cada cambio resolviera un problema real. Stack: FastAPI, React Native, MySQL, Docker, Linux."
+      "Desarrollé y mantuve sistemas web y móviles para optimizar procesos internos y mejorar la experiencia de clientes. Mejoré tiempos de carga hasta un 40%, automatizando tareas repetitivas y creando interfaces intuitivas. Colaboré con áreas de ventas, logística y soporte para asegurar que cada cambio resolviera un problema real. Stack: FastAPI, React Native, MySQL, Docker, Linux."
   },
   {
     date: "Septiembre 2022 – Abril 2024",
@@ -27,7 +28,7 @@ const EXPERIENCE = [
     title: "Desarrollador Web",
     company: "Hamster Connect",
     description:
-      "Colaboré con equipos en Países Bajos y Australia para construir una red social para emprendedores. Implementé funcionalidades de perfiles, publicaciones y notificaciones, trabajando tanto en frontend como backend. El objetivo: lograr que las ideas llegaran a las personas indicadas."
+      "Colaboré con equipos en Países Bajos y Australia para construir una red social para emprendedores. Implementé funcionalidades de perfiles, publicaciones y notificaciones, trabajando tanto en frontend como backend. El objetivo: que las ideas encontraran a las personas adecuadas."
   },
   {
     date: "Agosto 2017 – Septiembre 2023",
@@ -37,14 +38,12 @@ const EXPERIENCE = [
       "Desarrollé y mantuve 7 sistemas dentro del proyecto SmartCampus, incluyendo Admisiones, reportes académicos y gestiones administrativas. Digitalizamos procesos clave, mejorando la experiencia de estudiantes y reduciendo la carga administrativa."
   }
 ];
-
-
 ---
 
-<ol class="relative mt-16 text-justify">
+<ol class="relative mt-16 text-left sm:text-justify">
   {
     EXPERIENCE.map((experience) => (
-      <li class="">
+      <li>
         <ExperienceItem {...experience} />
       </li>
     ))
